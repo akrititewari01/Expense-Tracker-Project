@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #e2e2e2;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+    background-color: #4c87ff;
+    padding: 0.2rem 0.5rem;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* Ensure navbar is above other elements */
+}
+
+text {
+    color: whitesmoke;
+}
+
+main {
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 2px 2px 2px var(--box-shadow);
+}
+
+.container {
+    margin: 30px auto;
+    /* Center the container */
+    width: 350px;
+    position: relative;
+    /* Set the container to relative for absolute positioning of the chart */
+    padding: 10px;
+    float: inline-start;
+    left: 25%;
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin: 0;
+    color: #007BFF;
+}
+
+h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+    color: #007BFF;
+}
+
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.inc-exp-container {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.inc-exp-container>div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container>div:first-of-type {
+    border-right: 1px solid #4B527E;
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: #2ecc71;
+}
+
+.money.minus {
+    color: #c0392b;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+    background-color: #4B527E;
+    color: #E5C3A6;
+    border: 1px solid #4B527E;
+    border-radius: 10px;
+    /* Added border radius */
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #9c88ff;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    /* Added border radius */
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.list li.plus {
+    border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+    border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.chart-container {
+    position: absolute;
+    /* Position it absolutely */
+    top: 160px;
+    /* Adjust to avoid overlapping with the navbar */
+    right: 20%;
+    /* Adjust as needed */
+    width: 300px;
+    /* Set a width for the chart */
+    height: 200px;
+    /* Set a height for the chart */
+    z-index: 100;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    /* Ensure it appears above other elements */
+}
+
+.monthwise-expenses {
+    position: absolute;
+    display: flex;
+    /* Position it absolutely */
+    top: 460px;
+    /* Adjust to avoid overlapping with the navbar */
+    right: 20%;
+    /* Adjust as needed */
+    width: 300px;
+    /* Set a width for the chart */
+    height: 200px;
+    /* Set a height for the chart */
+    border-radius: 10px;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+    /* Ensure it appears above other elements */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    /* Center the cards */
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 150px;
+    /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
